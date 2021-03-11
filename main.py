@@ -60,7 +60,7 @@ def cancel(update, context):
 
 
 def main():
-    token = '1625023723:AAFMS7GwxYyUHLMR5lI1iA241l1DhpvC1eY'
+    token = '1595466561:AAF2MtUACIttTpsZC_rURzsV5acLj2Jr4QE'
     updater = Updater(token=token, use_context=True)
     
     updater.dispatcher.add_handler(CommandHandler('start', welcome))
