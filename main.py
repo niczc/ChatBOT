@@ -12,9 +12,7 @@ def welcome(update, context):
     print(message)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
-def vinhoagora(update, context):
-    message = "Primeiro vá estudar, tá pensando que é o Caique??"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
   
 def feedback(update, context):
     message = 'Por favor, deixe um feedback: '
@@ -42,6 +40,10 @@ def replay(update, context):
 
 def youtube(update, context):
     message = "Link do canal do youtube: https://www.youtube.com/"
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+def vinhoAgora(update, context):
+    message = "Primeiro vá estudar, tá pensando que é o Caique??"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def rules(update, context):
@@ -72,7 +74,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('replay', replay))
     updater.dispatcher.add_handler(CommandHandler('youtube', youtube))
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
-    updater.dispatcher.add_handler(CommandHandler('vinhoagora', vinhoagora))
+    updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
 
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('feedback', feedback)],
