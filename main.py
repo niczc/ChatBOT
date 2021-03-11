@@ -43,7 +43,7 @@ def youtube(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def vinhoAgora(update, context):
-    message = "Primeiro vá estudar, tá pensando que é o Caique??"
+    message = "Você tem que estudar primeiro seu Rubinho, tá pensando que é o Caique??"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def rules(update, context):
