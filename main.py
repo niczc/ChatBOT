@@ -8,7 +8,7 @@ STATE1 = 1
 STATE2 = 2
 
 def welcome(update, context):
-    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n\n /rules\n /absorcao\n /exaustao\n /youtube\n /replay\n /feedback\n /vinhoagora\n"
+    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n\n /rules\n /absorcao\n /exaustao\n /youtube\n /replay\n /feedback\n /vinhoAgora\n"
     print(message)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
@@ -35,7 +35,7 @@ def inputFeedback2(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
   
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°1 \n \n 📌 Sexta-Feira, 12,  as 19h \n 📌 executor : Vinicius \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n ⚠️ Responsável pelo link : Vinicius"
+    message = "RAPEIZE... \n \n ## REPLAY n°1 \n \n 📌 Sexta-Feira, 12,  as 20h \n 📌 executor : Lucas \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n ⚠️ Responsável pelo link : Lucas"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def youtube(update, context):
@@ -55,11 +55,22 @@ def absorcao(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def exaustao(update, context):
-    message = "Mercado está perdendo força após um movimento forte e com um intervalo maior entre as agressões? Pode estar acontecendo uma exaustão, fique atento! "
+    message = "Mercado está perdendo força após um movimento forte de alta ou baixa, com um intervalo maior entre as agressões, existindo lotes para buscar mas não possui força para continuar? Pode estar acontecendo uma exaustão, fique atento! "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
-  
- 
+def book(update, context):
+    message = "Por ele é possível enxergar as intenções de compra e venda que o ativo está sendo negociado."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+def times(update, context):
+    message = "Com essa ferramente você conseguirar visualizar todos os negocios que foram efetuados. Nele é informado o comprador, vendedor, o horário e a quantidade negociada."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+def vwap(update, context):
+    message = "A VWAP ou Preço Médio Ponderado Por Volume é um dos indicador técnicos mais famosos do mercado. Por ele marcar uma região de muito volume financeiro, é comum institucionais estarem posicionados na região e dessa forma demonstrar interesse em protege-la. "
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+
 def cancel(update, context):
     return ConversationHandler.END
 
@@ -71,6 +82,9 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('start', welcome))
     updater.dispatcher.add_handler(CommandHandler('absorcao', absorcao))
     updater.dispatcher.add_handler(CommandHandler('exaustao', exaustao))
+    updater.dispatcher.add_handler(CommandHandler('book', book))
+    updater.dispatcher.add_handler(CommandHandler('times_e_trades', times))
+    updater.dispatcher.add_handler(CommandHandler('vwap', vwap))
     updater.dispatcher.add_handler(CommandHandler('replay', replay))
     updater.dispatcher.add_handler(CommandHandler('youtube', youtube))
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
