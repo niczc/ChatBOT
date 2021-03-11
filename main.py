@@ -23,7 +23,7 @@ def inputFeedback(update, context):
     feedback = update.message.text
     print(feedback)
     if len(feedback) < 10:
-        message = "Seu feedback foi muito curto, conte-nos mais por favor"
+        message = "Seu feedback foi muito curto, conte-nos mais sobre sua experiência"
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
         return STATE1
     else:
