@@ -39,7 +39,7 @@ def replay(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def youtube(update, context):
-    message = "Link do canal do youtube: https://www.youtube.com/channel/UCqj3NoSb5o_9vcg8QRAC2Hw"
+    message = "Link do canal do youtube:\n https://www.youtube.com/channel/UCqj3NoSb5o_9vcg8QRAC2Hw"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def vinhoAgora(update, context):
