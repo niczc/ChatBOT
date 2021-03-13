@@ -15,7 +15,8 @@ def welcome(update, context):
 
 def lista_replay(update, context):
     message = 'Ordem Semanal dos Replays: \n Segunda-Feira 19:00 (15/03): Lucas Chalegre \n Quarta-Feira 19:00 (17/03): Gustavo Teles \n  Sexta-Feira 19:00 (19/03): Renan Galvan \n Sábado 13:00 (20/03): Guilherme Turibio'
-  
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+    
 def feedback(update, context):
     message = 'Por favor, deixe um feedback: '
     update.message.reply_text(message, reply_markup=ReplyKeyboardMarkup([], one_time_keyboad=True))
@@ -91,6 +92,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('youtube', youtube))
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
     updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
+    updater.dispatcher.add_handler(CommandHandler('lista dos replays', lista_replay))
 
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('feedback', feedback)],
