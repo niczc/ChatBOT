@@ -8,7 +8,7 @@ STATE1 = 1
 STATE2 = 2
 
 def welcome(update, context):
-    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n \n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /feedback\n /vinhoAgora\n"
+    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n \n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /ordem_dos_replays\n /vinhoAgora\n"
     print(message)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
