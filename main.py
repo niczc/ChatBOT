@@ -92,7 +92,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('youtube', youtube))
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
     updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
-    updater.dispatcher.add_handler(CommandHandler('lista dos replays', lista_replay))
+    updater.dispatcher.add_handler(CommandHandler('ordem_dos_replays', lista_replay))
 
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('feedback', feedback)],
