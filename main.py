@@ -75,6 +75,8 @@ def vwap(update, context):
 
 def ajuste(update, context):
      message = "Está pensando em ficar posicionado até o próximo pregão? Então é melhor ficar atento ao ajuste, pois é no preço do ajuste que você ficará posicionado. Ele é um ajuste financeiro, podendo ser débito ou crédito, no próximo dia útil na conta dos investidores. "
+     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+      
 def cancel(update, context):
     return ConversationHandler.END
 
@@ -94,7 +96,8 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
     updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
     updater.dispatcher.add_handler(CommandHandler('ordem_dos_replays', lista_replay))
-
+    updater.dispatcher.add_handler(CommandHandler('ajuste', ajuste))
+    
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('feedback', feedback)],
         states={
