@@ -73,7 +73,8 @@ def vwap(update, context):
     message = "A VWAP ou Preço Médio Ponderado Por Volume é um dos indicador técnicos mais famosos do mercado. Por ele marcar uma região de muito volume financeiro, é comum institucionais estarem posicionados na região e dessa forma demonstrar interesse em protege-la. "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
-
+def ajuste(update, context):
+     message = "Está pensando em ficar posicionado até o próximo pregão? Então é melhor ficar atento ao ajuste, pois é no preço do ajuste que você ficará posicionado. Ele é um ajuste financeiro, podendo ser débito ou crédito, no próximo dia útil na conta dos investidores. "
 def cancel(update, context):
     return ConversationHandler.END
 
