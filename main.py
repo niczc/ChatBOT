@@ -14,7 +14,7 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Quarta-Feira 19:00 (17/03): Gustavo Teles \n  📌 Sexta-Feira 19:00 (19/03): Renan Galvan \n 📌 Sábado 13:00 (20/03): Guilherme Turibio'
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Quarta-Feira 20:00 (17/03): Gustavo Teles \n  📌 Sexta-Feira 19:00 (19/03): Renan Galvan \n 📌 Sábado 13:00 (20/03): Guilherme Turibio'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
