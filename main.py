@@ -71,7 +71,7 @@ def liquidez(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def escora(update, context):
-    message = "Voce percebe que um player está comprado/vendido e continua deixando lote no book de ofertas a favor de sua posição? Ele pode estar querendo defender aquele nível de preço. Lotes de escora são lotes de defesa de uma região."
+    message = "Voce percebe que um player está comprado/vendido e continua deixando lote no book de ofertas a favor de sua posição? Ele pode estar querendo defender aquele nível de preço. Lotes de escora são lotes para defender uma região."
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 
