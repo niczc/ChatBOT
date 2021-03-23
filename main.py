@@ -38,7 +38,7 @@ def inputFeedback2(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
   
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°6 \n \n 📌 Terça-Feira, 17,  as 20h \n 📌 executor : Ventura Nascimento \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n ⚠️ "
+    message = "RAPEIZE... \n \n ## REPLAY n°6 \n \n 📌 Terça-Feira, 17,  as 20h \n 📌 executor : Ventura Nascimento \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n  "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def youtube(update, context):
