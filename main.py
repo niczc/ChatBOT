@@ -8,13 +8,13 @@ STATE1 = 1
 STATE2 = 2
 
 def welcome(update, context):
-    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n \n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /ordem_dos_replays\n /vinhoAgora\n"
+    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n /lote_liquidez\n /escora\n \n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /ordem_dos_replays\n /vinhoAgora\n"
     print(message)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Segunda-Feira: 19:00 (22/03): Murillo Omena \n 📌 Terça-Feira 19:00 (23/03): Ventura Nascimento \n 📌 Quarta-Feira 19:00 (24/03): Vinicius Duarte \n 📌 Quinta-Feira 19:00 (25/03): Ettiana - Nayanne \n 📌 Sexta-Feira 19:00 (26/03): Gabriela - Fefs \n 📌 Sábado 13:00 (27/03): Guilherme '
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Quarta-Feira 19:00 (17/03): Gustavo Teles \n  📌 Sexta-Feira 19:00 (19/03): Renan Galvan \n 📌 Sábado 13:00 (20/03): Guilherme Turibio'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
@@ -38,12 +38,17 @@ def inputFeedback2(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
   
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°5 \n \n 📌Terça-Feira, 22, às 19hs \n 📌 executor : Ventura Nascimento \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n "
+    message = "RAPEIZE... \n \n ## REPLAY n°3 \n \n 📌 Quarta-Feira, 17,  as 20h \n 📌 executor : Gustavo Teles \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n ⚠️ "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
-    
+
 def youtube(update, context):
     message = "Link do canal do youtube:\n https://www.youtube.com/channel/UCqj3NoSb5o_9vcg8QRAC2Hw"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+# def resultado(update, context):
+#  função dos id usuario
+#  recupera a função adicionando um randon + a mensagem a ser acrescentada ao usuario
+#  retorna na tela o resultado
 
 def vinhoAgora(update, context):
     message = "Você tem que estudar primeiro seu Rubinho, tá pensando que é o Caique??"
@@ -60,6 +65,15 @@ def absorcao(update, context):
 def exaustao(update, context):
     message = "Mercado está perdendo força após um movimento forte de alta ou baixa, com um intervalo maior entre as agressões, existindo lotes para buscar mas não possui força para continuar? Pode estar acontecendo uma exaustão, fique atento! "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+def liquidez(update, context):
+    message = "Muitas vezes confundido com os lotes de escora, lotes de liquidez ocorrem quando um player comprado/vendido está colocando lotes na contraparte do book chamando o mercado pro lado que seja a favor de sua posição e assim aumente o seu lucro."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+    
+def escora(update, context):
+    message = "Voce percebe que um player está comprado/vendido e continua deixando lote no book de ofertas a favor de sua posição? Ele pode estar querendo defender aquele nível de preço. Lotes de escora são lotes de defesa de uma região."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+    
 
 def book(update, context):
     message = "Por ele é possível enxergar as intenções de compra e venda que o ativo está sendo negociado."
@@ -97,6 +111,9 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
     updater.dispatcher.add_handler(CommandHandler('ordem_dos_replays', lista_replay))
     updater.dispatcher.add_handler(CommandHandler('ajuste', ajuste))
+    updater.dispatcher.add_handler(CommandHandler('escora', escora))
+    updater.dispatcher.add_handler(CommandHandler('lote_liquidez', liquidez))
+
     
     conversation_handler = ConversationHandler(
         entry_points=[CommandHandler('feedback', feedback)],
