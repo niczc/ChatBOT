@@ -14,7 +14,7 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Quarta-Feira 19:00 (17/03): Gustavo Teles \n  📌 Sexta-Feira 19:00 (19/03): Renan Galvan \n 📌 Sábado 13:00 (20/03): Guilherme Turibio'
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌 Quarta-Feira 19:00 (24/03): Vinicius Duarte \n 📌Quinta-Feira 19:00 (25/03): Ettiana e Nayanne 📌 Sexta-Feira 19:00 (26/03): Fefs e Gabriela \n 📌 Sábado 13:00 (27/03): Guilherme Turibio'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
@@ -38,7 +38,7 @@ def inputFeedback2(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
   
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°6 \n \n 📌 Terça-Feira, 17,  as 20h \n 📌 executor : Ventura Nascimento \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n  "
+    message = "RAPEIZE... \n \n ## REPLAY n°7 \n \n 📌 Quarta-Feira, 17,  as 20h \n 📌 executor : Vinicius Duarte \n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n  "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def youtube(update, context):
