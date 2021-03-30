@@ -18,7 +18,7 @@ def lista_replay(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°12 \n \n 📌 Segunda-Feira,29,  as 19hrs \n 📌 executor : Aldeniz Neto (19:00)\n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n  "
+    message = "RAPEIZE... \n \n ## REPLAY n°12 \n \n 📌 Terça-Feira, 29,  as 19hrs \n 📌 executor : Aldeniz Neto (19:00)\n ⚠️ Dia Replay : Será sorteado no dia do replay via sorteador \n  "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
