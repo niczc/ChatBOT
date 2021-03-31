@@ -18,7 +18,7 @@ def lista_replay(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°12 \n \n 📌 Quarta-Feira, 31,  as 19hrs \n 📌 executor :Danilo Dias - EX JP MORGAN (19:00)\n ⚠️ NÃO PERCAM, SERÁ UMA ÓTIMA OPORTUNIDADE ⚠️ "
+    message = "RAPEIZE... \n \n ## REPLAY n°13 \n \n 📌 Quarta-Feira, 31,  as 19hrs \n 📌 executor :Danilo Dias - EX JP MORGAN (19:00)\n ⚠️ NÃO PERCAM, SERÁ UMA ÓTIMA OPORTUNIDADE ⚠️ "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
