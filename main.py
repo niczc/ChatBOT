@@ -14,11 +14,11 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌Quarta-Feira 19:00 (07/04):Jairo Viana \n 📌Quinta-Feira 19:00 (08/04): Vini Gonçalves e Ventura \n '
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n 📌Quinta-Feira 19:00 (08/04): Vini Gonçalves e Alan Ambiel \n '
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°18 \n \n 📌 Quarta, 07,  as 19hrs \n 📌 executor :Jairo Viana \n ⚠️ Dia Replay: Será sorteado no dia do replay via sorteador "
+    message = "RAPEIZE... \n \n ## REPLAY n°19 \n \n 📌 Quinta, 08,  as 19hrs \n 📌 executores :Vini Gonçalves e Alan Ambiel\n ⚠️ Dia Replay: Será sorteado no dia do replay via sorteador "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
