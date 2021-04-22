@@ -77,7 +77,7 @@ def escora(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def renovacao(update, context):
-    message = "A renovação pode ser considerada também como um tipo de absorção. Você pode percebe-la no momento em que o mercado está tentando ganhar um nível de preço, por exemplo, existem 150 lotes na venda e os compradores agridem esses lotes porém o preço não desloca e você percebe que agora passou a ter 180 lotes na venda."
+    message = "A renovação pode ser considerada também como um tipo de absorção. Você pode percebe-la no momento em que o mercado está tentando ganhar um nível de preço. Por exemplo, existem 150 lotes na venda e os compradores agridem esses lotes porém o preço não desloca e você nota que agora passou a ter 180 lotes na venda, se caracterizando assim uma renovação nesse nível de preço."
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def cancelamento(update, context):
