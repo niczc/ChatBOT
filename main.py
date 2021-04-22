@@ -14,11 +14,11 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Segunda-Feira 19:00 (19/04): Felipe Vieira e Murillo (Ações) \n 📌Terça-Feira 19:00 (20/04): VAGO!!! \n  📌Quarta-Feira 19:00 (21/04): FERIADO!!! \n  📌Quinta-Feira 05:00 (22/04): Vinicius Gonçalves \n 📌Sexta-Feira 19:00 (16/04): VAGO!!! \n  '
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Quinta-Feira 20:00 (22/04): Matheus Sun (Velstand) \n 📌Sexta-Feira 19:00 (16/04): VAGO!!! \n  '
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°23 \n \n 📌 Segunda, 21,  as 19hrs \n 📌 executores: Felipe Vieira e Murillo \n ⚠️ Tema: Análise Fundamentalista e Técnica de papéis (B3) "
+    message = "RAPEIZE... \n \n ## REPLAY n°25 \n \n 📌Quinta, 22,  as 20hrs \n 📌 executor: Matheus Sun (Velstand) \n ⚠️ Tema: Análise Fundamentalista e Técnica de papéis (B3) "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
