@@ -75,7 +75,14 @@ def liquidez(update, context):
 def escora(update, context):
     message = "Voce percebe que um player está comprado/vendido e continua deixando lote no book de ofertas a favor de sua posição? Ele pode estar querendo defender aquele nível de preço. Lotes de escora são lotes para defender uma região."
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+
+def renovacao(update, context):
+    message = "A renovação pode ser considerada também como um tipo de absorção. Você pode percebe-la no momento em que o mercado está tentando ganhar um nível de preço, por exemplo, existem 150 lotes na venda e os compradores agridem esses lotes porém o preço não desloca e você percebe que agora passou a ter 180 lotes na venda."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
+def cancelamento(update, context):
+    message = "Diferente da renovação, o cancelamento seria o 'cair/subir no vazio'. Vamos supor que a média de lotes no book é de 150 contratos, porém você percebe que o mercado subiu 3 níveis de preço com cerca de 50 por nivel. Isso pode ter acontecido pelos players terem cancelado os lotes que estavam no book. "
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 def book(update, context):
     message = "Por ele é possível enxergar as intenções de compra e venda que o ativo está sendo negociado."
@@ -115,6 +122,8 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('ajuste', ajuste))
     updater.dispatcher.add_handler(CommandHandler('escora', escora))
     updater.dispatcher.add_handler(CommandHandler('lote_liquidez', liquidez))
+    updater.dispatcher.add_handler(CommandHandler('renovacao', renovacao))
+    updater.dispatcher.add_handler(CommandHandler('cancelamento', cancelamento))
 
     
     conversation_handler = ConversationHandler(
