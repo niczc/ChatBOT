@@ -18,7 +18,7 @@ def lista_replay(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
-    message = "RAPEIZE... \n \n ## REPLAY n°25 \n \n 📌Quinta, 22,  as 20hrs \n 📌 executor: Matheus Sun (Velstand) \n ⚠️ Tema: Análise Fundamentalista e Técnica de papéis (B3) "
+    message = "RAPEIZE... \n \n ## REPLAY n°25 \n \n 📌Quinta, 22,  as 20hrs \n 📌 executor: Matheus Sun (Velstand) \n ⚠️ Tema: Estudo - Dolar Futuro "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
