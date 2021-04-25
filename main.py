@@ -4,9 +4,6 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
 
 
-STATE1 = 1
-STATE2 = 2
-
 def welcome(update, context):
     message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n /lote_liquidez\n /escora\n /renovacao\n /cancelamento \n\n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /ordem_dos_replays\n /vinhoAgora\n"
     print(message)
@@ -21,27 +18,6 @@ def replay(update, context):
     message = "RAPEIZE... \n \n ## REPLAY n°25 \n \n 📌Quinta, 22,  as 20hrs \n 📌 executor: Matheus Sun (Velstand) \n ⚠️ Tema: Estudo - Dolar Futuro "
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
-def feedback(update, context):
-    message = 'Por favor, deixe um feedback: '
-    update.message.reply_text(message, reply_markup=ReplyKeyboardMarkup([], one_time_keyboad=True))
-    return STATE1
-
-def inputFeedback(update, context):
-    feedback = update.message.text
-    print(feedback)
-    if len(feedback) < 10:
-        message = "Seu feedback foi muito curto, conte-nos mais sobre sua experiência"
-        context.bot.send_message(chat_id=update.effective_chat.id, text=message)
-        return STATE1
-    else:
-        message = "Muito obrigado pelo feedback, lhe desejo uma semana repleta de gains!"
-        context.bot.send_message(chat_id=update.effective_chat.id, text=message)
-
-def inputFeedback2(update, context):
-    message = "Muito obrigado pelo feedback, lhe desejo uma semana repleta de gains!"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
-  
-
 
 def youtube(update, context):
     message = "Link do canal do youtube:\n https://www.youtube.com/channel/UCqj3NoSb5o_9vcg8QRAC2Hw"
@@ -126,15 +102,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('cancelamento', cancelamento))
 
     
-    conversation_handler = ConversationHandler(
-        entry_points=[CommandHandler('feedback', feedback)],
-        states={
-            STATE1: [MessageHandler(Filters.text, inputFeedback)],
-            STATE2: [MessageHandler(Filters.text, inputFeedback2)]
-        },
-        fallbacks=[CommandHandler('cancel', cancel)])
-    updater.dispatcher.add_handler(conversation_handler)
-    
+
     
     updater.start_polling()
     print(str(updater))
