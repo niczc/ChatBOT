@@ -14,7 +14,7 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Segunda-Feira (26/04) 📌 \n 05:15 -> Estudo de padrões de fluxo e movimentos - Vinícius \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo \n 19:00 -> HORÁRIO LIVRE \n \n 📌Sexta-Feira 19:00 (16/04): VAGO!!! \n  '
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Segunda-Feira (26/04) 📌 \n 05:15 -> Estudo de padrões de fluxo e movimentos - Vinícius \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo \n 19:00 -> HORÁRIO LIVRE \n \n  📌Terça-Feira (27/04) 📌 \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo \n 19:00 -> Ettiana \n \n 📌Quarta-Feira (28/04) 📌 \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo \n 19:00 -> Nicolas \n \n 📌Quinta-Feira (29/04) 📌 \n 05:15 ->  Estudo de padrões de fluxo e movimentos - Vinícius \n 19:00 -> HORÁRIO LIVRE \n \n 📌Sexta-Feira (30/04) 📌 \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo  '
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
