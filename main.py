@@ -11,7 +11,7 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Quinta-Feira 20:00 (22/04): Matheus Sun (Velstand) \n 📌Sexta-Feira 19:00 (16/04): VAGO!!! \n  '
+    message = '⚠️  Ordem Semanal dos Replays:  ⚠️\n \n 📌Segunda-Feira (26/04) 📌 \n 05:15 -> Estudo de padrões de fluxo e movimentos - Vinícius \n 11:00 ->  Estudo de padrões de fluxo e movimentos - Murillo \n 19:00 -> HORÁRIO LIVRE \n \n 📌Sexta-Feira 19:00 (16/04): VAGO!!! \n  '
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context):
