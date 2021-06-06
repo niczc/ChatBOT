@@ -18,7 +18,7 @@ def lista_replay(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context): 
-    message = "EM ABERTO"
+    message = "Segunda-Feira  (07/06 19:30): Filipe Vieira - REPLAY DE MERCADO"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
