@@ -14,11 +14,11 @@ def welcome(update, context):
 
 
 def lista_replay(update, context):
-    message = 'Segunda-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO'
+    message = 'Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO'
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def replay(update, context): 
-    message = "Segunda-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO"
+    message = "Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO"
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
