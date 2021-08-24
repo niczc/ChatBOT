@@ -8,18 +8,18 @@ STATE1 = 1
 STATE2 = 2
 
 def welcome(update, context):
-    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n /lote_liquidez\n /escora\n /renovacao\n /cancelamento \n\n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /ordem_dos_replays\n /vinhoAgora\n"
+    message = 'Olá, operador(a) ' + update.message.from_user.first_name + "! \nTemos disponiveis os seguintes comandos:\n \n ⚠️ OPERACIONAIS ⚠️ \n /absorcao\n /exaustao\n /lote_liquidez\n /escora\n /renovacao\n /cancelamento \n\n ⚠️ FERRAMENTAS ⚠️ \n /book\n /times_e_trades\n /vwap\n /ajuste\n \n ⚠️ INFORMAÇÕES ⚠️ \n /rules\n /youtube\n /replay\n /vinhoAgora\n"
     print(message)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
-def lista_replay(update, context):
-    message = 'Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO'
-    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+#def lista_replay(update, context):
+#   message = 'Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO'
+#    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
-def replay(update, context): 
-    message = "Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+#def replay(update, context): 
+#    message = "Quarta-Feira  (16/06 19:30): Lucas Chalegre - REPLAY DE MERCADO"
+#    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     
 def feedback(update, context):
     message = 'Por favor, deixe um feedback: '
@@ -114,11 +114,11 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('book', book))
     updater.dispatcher.add_handler(CommandHandler('times_e_trades', times))
     updater.dispatcher.add_handler(CommandHandler('vwap', vwap))
-    updater.dispatcher.add_handler(CommandHandler('replay', replay))
+    #updater.dispatcher.add_handler(CommandHandler('replay', replay))
     updater.dispatcher.add_handler(CommandHandler('youtube', youtube))
     updater.dispatcher.add_handler(CommandHandler('rules', rules))
     updater.dispatcher.add_handler(CommandHandler('vinhoAgora', vinhoAgora))
-    updater.dispatcher.add_handler(CommandHandler('ordem_dos_replays', lista_replay))
+    #updater.dispatcher.add_handler(CommandHandler('ordem_dos_replays', lista_replay))
     updater.dispatcher.add_handler(CommandHandler('ajuste', ajuste))
     updater.dispatcher.add_handler(CommandHandler('escora', escora))
     updater.dispatcher.add_handler(CommandHandler('lote_liquidez', liquidez))
