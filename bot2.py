@@ -125,7 +125,8 @@ def asnwer(call):
         
         #Psicologia 
     if call.data == 'ansiedade':
-        bot.send_message(call.message.chat.id, teoric.ansiedade)
+        msg = bot.send_message(call.message.chat.id, teoric.ansiedade)
+        time(2, bot.delete_message, (msg.chat.id, msg.message_id).start)
     if call.data == 'medo':
         bot.send_message(call.message.chat.id, teoric.medo)
     if call.data == 'n_erros':
