@@ -1,12 +1,15 @@
 import telebot
 from telebot import types
 from telebot import util, types
+import threading
 import time
 import teoric
 import config
 
 
 bot = telebot.TeleBot(config.TOKEN)
+
+
 
 @bot.message_handler(commands=['start'])
 def start_menu(message):
@@ -21,7 +24,7 @@ def start_menu(message):
 
 @bot.callback_query_handler(func = lambda call: call.data == 'operacionais')
 def opera_choosen(call):
-    mkup = types.InlineKeyboardMarkup(row_width=1)
+    mkup = types.InlineKeyboardMarkup(row_width=2)
     item1 = types.InlineKeyboardButton("Absorção", callback_data = 'abs')
     item2 = types.InlineKeyboardButton("Exaustao", callback_data = 'ext')
     item3 = types.InlineKeyboardButton("Lote de Liquidez", callback_data = 'liq')
@@ -30,12 +33,12 @@ def opera_choosen(call):
     item6 = types.InlineKeyboardButton("Cancelamento", callback_data = 'can')
     item7 = types.InlineKeyboardButton("Back", callback_data = "back")
     mkup.add(item1, item2, item3, item4, item5, item6, item7)
-    text = "Operacionais"
+    text = "Operacionais disponiveis"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
     
 @bot.callback_query_handler(func = lambda call: call.data == 'ferramentas')
 def ferra_choosen(call):
-    mkup = types.InlineKeyboardMarkup(row_width=1)
+    mkup = types.InlineKeyboardMarkup(row_width=2)
     item1 = types.InlineKeyboardButton("Times & Trades", callback_data = 'time')
     item2 = types.InlineKeyboardButton("Book de Ofertas", callback_data = 'book')
     item3 = types.InlineKeyboardButton("Super DOM", callback_data = 'dom')
@@ -49,19 +52,20 @@ def ferra_choosen(call):
 
 @bot.callback_query_handler(func = lambda call: call.data == 'psicologia')
 def psico_choosen(call):
-    mkup = types.InlineKeyboardMarkup(row_width=1)
+    mkup = types.InlineKeyboardMarkup(row_width=2)
     item1 = types.InlineKeyboardButton("Ansiedade", callback_data = 'ansiedade')
     item2 = types.InlineKeyboardButton("Medo", callback_data = 'medo')
     item3 = types.InlineKeyboardButton("Não aceita os erros", callback_data = 'n_erros')
     item4 = types.InlineKeyboardButton("Auto Sabotagem", callback_data = 'sabotagem')
     item5 = types.InlineKeyboardButton("Não sabe perder", callback_data = 'n_perder')
     item6 = types.InlineKeyboardButton("Não sabe ganhar", callback_data = 'n_ganhar')
-    item7 = types.InlineKeyboardButton("Pressa em ganhar dinheiro", callback_data = 'p_dinheiro')
-    item8 = types.InlineKeyboardButton("Não ter paciencia pra estudar", callback_data = 'n_estudar')
-    item9 = types.InlineKeyboardButton("Não saber traçar metas e objetivos", callback_data = 'n_metas')
+    item7 = types.InlineKeyboardButton("Dinheiro Rápido", callback_data = 'p_dinheiro')
+    item8 = types.InlineKeyboardButton("Sem estudar", callback_data = 'n_estudar')
+    item9 = types.InlineKeyboardButton("Metas e Objetivos", callback_data = 'n_metas')
     item10 = types.InlineKeyboardButton("Insegurança", callback_data = 'p_dinheiro')
-    item11 = types.InlineKeyboardButton("Back", callback_data = "back")
-    mkup.add(item1, item2, item3, item4, item5, item6, item7,item8, item9, item10, item11)
+    item11 = types.InlineKeyboardButton("Saiba mais ", url = "https://instagram.com/renanreligare?utm_medium=copy_link")
+    item12 = types.InlineKeyboardButton("Back", callback_data = "back")
+    mkup.add(item1, item2, item3, item4, item5, item6, item7,item8, item9, item10, item11, item12)
     text = "Psicologia do Trader por @RenanReligare"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
 
@@ -97,64 +101,89 @@ def bac_choosen(call):
 def asnwer(call):
     #operacionais
     if call.data == 'abs':
-        bot.send_message(call.message.chat.id, teoric.absorcao)
+        msg = bot.send_message(call.message.chat.id, teoric.absorcao)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'ext':
-        bot.send_message(call.message.chat.id, teoric.exaustao)
+        msg = bot.send_message(call.message.chat.id, teoric.exaustao)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'liq':
-        bot.send_message(call.message.chat.id, teoric.liquidez)
+        msg = bot.send_message(call.message.chat.id, teoric.liquidez)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'esc':
-        bot.send_message(call.message.chat.id, teoric.escora)
+        msg = bot.send_message(call.message.chat.id, teoric.escora)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'ren':
-        bot.send_message(call.message.chat.id, teoric.renovacao)
+        msg = bot.send_message(call.message.chat.id, teoric.renovacao)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'can':
-        bot.send_message(call.message.chat.id, teoric.cancelamento)
+        msg = bot.send_message(call.message.chat.id, teoric.cancelamento)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     
     #ferramentas
     if call.data == 'time':
-        bot.send_message(call.message.chat.id, teoric.times)
+        msg = bot.send_message(call.message.chat.id, teoric.times)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'book':
-        bot.send_message(call.message.chat.id, teoric.book)
+        msg = bot.send_message(call.message.chat.id, teoric.book)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'dom':
-        bot.send_message(call.message.chat.id, teoric.dom)
+        msg = bot.send_message(call.message.chat.id, teoric.dom)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'vol':
-        bot.send_message(call.message.chat.id, teoric.vol)
+        msg = bot.send_message(call.message.chat.id, teoric.vol)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'vwap':
-        bot.send_message(call.message.chat.id, teoric.vwap)
+        msg = bot.send_message(call.message.chat.id, teoric.vwap)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'ajuste':
-        bot.send_message(call.message.chat.id, teoric.ajuste)
+        msg = bot.send_message(call.message.chat.id, teoric.ajuste)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
         
         #Psicologia 
     if call.data == 'ansiedade':
         msg = bot.send_message(call.message.chat.id, teoric.ansiedade)
-        time(2, bot.delete_message, (msg.chat.id, msg.message_id).start)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'medo':
-        bot.send_message(call.message.chat.id, teoric.medo)
+        msg = bot.send_message(call.message.chat.id, teoric.medo)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'n_erros':
         bot.send_message(call.message.chat.id, teoric.n_erros)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'sabotagem':
         bot.send_message(call.message.chat.id, teoric.sabotagem)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'n_perder':
         bot.send_message(call.message.chat.id, teoric.n_perder)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'n_ganhar':
         bot.send_message(call.message.chat.id, teoric.n_ganhar)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'p_dinheiro':
         bot.send_message(call.message.chat.id, teoric.p_dinheiro)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'n_estudar':
         bot.send_message(call.message.chat.id, teoric.n_estudar)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'n_metas':
         bot.send_message(call.message.chat.id, teoric.n_metas)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'inseguranca':
         bot.send_message(call.message.chat.id, teoric.inseguranca)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
 
         #Informações
     if call.data == 'rules':
-        bot.send_message(call.message.chat.id, teoric.rules)
+        msg = bot.send_message(call.message.chat.id, teoric.rules)
+        threading.Timer(40, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'replay':
-        bot.send_message(call.message.chat.id, teoric.replay)
+        msg = bot.send_message(call.message.chat.id, teoric.replay)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'lista':
-        bot.send_message(call.message.chat.id, teoric.lista)
+        msg = bot.send_message(call.message.chat.id, teoric.lista)
+        threading.Timer(25, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     if call.data == 'vinho':
-        bot.send_message(call.message.chat.id, teoric.vinho)
+        msg = bot.send_message(call.message.chat.id, teoric.vinho)
+        threading.Timer(15, bot.delete_message, (msg.chat.id, msg.message_id)).start()
 
 
 while True:
