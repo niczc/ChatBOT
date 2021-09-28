@@ -40,7 +40,7 @@ def opera_choosen(call):
     item4 = types.InlineKeyboardButton("Lote de Escora", callback_data = 'esc')
     item5 = types.InlineKeyboardButton("Renovação", callback_data = 'ren')
     item6 = types.InlineKeyboardButton("Cancelamento", callback_data = 'can')
-    item7 = types.InlineKeyboardButton("Back", callback_data = "back")
+    item7 = types.InlineKeyboardButton("Voltar", callback_data = "back")
     mkup.add(item1, item2, item3, item4, item5, item6, item7)
     text = "Operacionais disponiveis"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
@@ -54,7 +54,7 @@ def ferra_choosen(call):
     item4 = types.InlineKeyboardButton("Volume At Price", callback_data = 'vol')
     item5 = types.InlineKeyboardButton("VWAP", callback_data = 'vwap')
     item6 = types.InlineKeyboardButton("Ajuste", callback_data = 'ajuste')
-    item7 = types.InlineKeyboardButton("Back", callback_data = "back")
+    item7 = types.InlineKeyboardButton("Voltar", callback_data = "back")
     mkup.add(item1, item2, item3, item4, item5, item6, item7)
     text = "Ferramentas"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
@@ -73,7 +73,7 @@ def psico_choosen(call):
     item9 = types.InlineKeyboardButton("Metas e Objetivos", callback_data = 'n_metas')
     item10 = types.InlineKeyboardButton("Insegurança", callback_data = 'p_dinheiro')
     item11 = types.InlineKeyboardButton("Saiba mais ", url = "https://instagram.com/renanreligare?utm_medium=copy_link")
-    item12 = types.InlineKeyboardButton("Back", callback_data = "back")
+    item12 = types.InlineKeyboardButton("Voltar", callback_data = "back")
     mkup.add(item1, item2, item3, item4, item5, item6, item7,item8, item9, item10, item11, item12)
     text = "Psicologia do Trader por @RenanReligare"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
@@ -88,7 +88,7 @@ def opera_choosen(call):
     item4 = types.InlineKeyboardButton("Lista dos Replays", callback_data = 'lista')
     item5 = types.InlineKeyboardButton("Quero Vinho", callback_data = 'vinho')
     item6 = types.InlineKeyboardButton("Fale com o Desenvolvedor", url = 'https://t.me/Nicolasleao')
-    item7 = types.InlineKeyboardButton("Back", callback_data = "back")
+    item7 = types.InlineKeyboardButton("Voltar", callback_data = "back")
     mkup.add(item1, item2, item3, item4, item5, item6, item7)
     text = "Informações do Grupo"
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=mkup)
@@ -101,8 +101,7 @@ def bac_choosen(call):
     item2 = types.InlineKeyboardButton("Ferramentas", callback_data = "ferramentas")
     item3 = types.InlineKeyboardButton('Psicologia do Trader', callback_data= 'psicologia')
     item4 = types.InlineKeyboardButton('Informações', callback_data= 'informacoes')
-    item5 = types.InlineKeyboardButton('Panorama', callback_data = 'panorama')
-    mkup.add(item1, item2, item3, item4, item5)
+    mkup.add(item1, item2, item3, item4)
     text = "Você novamente por aqui? Surgiu mais alguma dúvida? "
     bot.edit_message_text( text, call.message.chat.id, call.message.message_id, reply_markup=mkup)   
 
@@ -120,10 +119,11 @@ def asnwer(call):
         impacto = info['impacto']
         economic = pais + ": " + eventu + " - " + hora + " " + impacto
         noticias.append(economic)
-        one_message = [' \n \n'.join(noticias)]
-        if call.data == 'calenda':
-            msg = bot.send_message(call.message.chat.id, one_message)
-            threading.Timer(45, bot.delete_message, (msg.chat.id, msg.message_id)).start()
+        one_message = ['\n \n'.join(noticias)]
+    if call.data == 'calenda':
+        print(one_message)
+        msg = bot.send_message(call.message.chat.id, one_message)
+        threading.Timer(45, bot.delete_message, (msg.chat.id, msg.message_id)).start()
     #operacionais
     if call.data == 'abs':
         msg = bot.send_message(call.message.chat.id, teoric.absorcao)
