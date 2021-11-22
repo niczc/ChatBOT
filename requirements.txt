@@ -1,0 +1,9 @@
+requests
+python-telegram-bot
+PyTelegramBotAPI==2.2.3
+telebot
+types
+util
+datetime
+bs4
+emoji
