@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=niczc" alt="niczc" /></a> </p>
 
-<p align="left"> <a href="https://twitter.com/@_nicolsleao" target="blank"><img src="https://img.shields.io/twitter/follow/@_nicolsleao?logo=twitter&style=for-the-badge" alt="@_nicolsleao" /></a> </p>
+<p align="left"> <a href="https://twitter.com/_nicolsleao" target="blank"><img src="https://img.shields.io/twitter/follow/_nicolsleao?logo=twitter&style=for-the-badge" alt="_nicolsleao" /></a> </p>
 
 - 🔭 I’m currently working on [ChatBot](https://github.com/niczc/ChatBOT)
 
@@ -16,8 +16,7 @@
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://dev.to/https://dev.to/niczc" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="https://dev.to/niczc" height="30" width="40" /></a>
-<a href="https://twitter.com/@_nicolsleao" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="@_nicolsleao" height="30" width="40" /></a>
-<a href="https://instagram.com/@_nicolsleao" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="@_nicolsleao" height="30" width="40" /></a>
+<a href="https://twitter.com/_nicolsleao" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="_nicolsleao" height="30" width="40" /></a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
